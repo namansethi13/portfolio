@@ -77,12 +77,12 @@ function Hero() {
     },
     {
       name: "Twitter",
-      href: "https://www.twitter.com/namansethi13",
+      href: "https://www.twitter.com/namansethiyt",
       icon: faXTwitter,
     },
     {
       name: "Resume",
-      href: "https://www.linkedin.com/in/namansethi13/",
+      href: "https://drive.google.com/file/d/1CcOgGPGOZcob0HWAx8xiAzPLN4p6VLdx/view?usp=sharing",
       icon: faFilePdf,
     },
   ];
@@ -122,6 +122,10 @@ function Hero() {
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={icon} className="text-3xl text-light" />
+                  {name === "Resume" && (
+                    <span className="ml-2 text-sm ">View Resume</span>
+
+                  )}
                 </a>
               ))}
             </div>
