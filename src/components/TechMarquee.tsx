@@ -61,12 +61,14 @@ export default function TechMarquee() {
   }, [marqueeStop]);
 
   return (
-    <div className="relative bg-gradient-to-r from-[#212121] via-[#212121] to-[#333333] w-full h-full overflow-hidden">
+    <div className="relative bg-gradient-to-r from-[#212121] via-[#212121] to-[#333333] w-full h-full overflow-hidden py-10">
+     
       <div
-        className="relative w-full overflow-hidden bg-black py-6 overflow-x-hidden mb-10"
+        className="relative w-full overflow-hidden bg-black py-6 overflow-x-hidden   transform rotate-[0.7deg]"
         onMouseEnter={() => setMarqueeStop(true)}
         onMouseLeave={() => setMarqueeStop(false)}
       >
+     
         {/* Moved event handlers to the container */}
         <div
           ref={marqueeRef}
@@ -89,6 +91,12 @@ export default function TechMarquee() {
           ))}
         </div>
       </div>
+      <div
+        className="relative w-full overflow-hidden bg-highlight py-6 overflow-x-hidden mb-10 "
+        onMouseEnter={() => setMarqueeStop(true)}
+        onMouseLeave={() => setMarqueeStop(false)}
+      >
+        </div>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import {faGithub} from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const projects = [
     {
       name: "ShareAid",
@@ -11,7 +13,8 @@ const projects = [
       description: "An encrypted online secure notepad that allows users to store text at a unique URL and access it from anywhere.",
       techStack: ["HTML", "CSS", "JavaScript", "jQuery", "Django"],
       link: "https://save-my-text.vercel.app/",
-      image: "/save-my-text-ui.PNG"
+      image: "/save-my-text-ui.PNG",
+      github: "https://github.com/namansethi13/SaveMyText"
     },
   ];
   
@@ -37,7 +40,14 @@ const projects = [
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-xl md:text-2xl font-semibold text-white">{project.name}</h3>
+                <h3 className="text-xl md:text-2xl font-semibold text-white">{project.name} {project?.github && ( 
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    window.open(project.github, "_blank");
+                  }} className="float-right">
+                   <FontAwesomeIcon icon={faGithub} className="text-3xl text-light cursor-pointer" />
+                  </button>
+                )}</h3>
                 <p className="text-gray-300 mt-2">{project.description}</p>
                 <div className="flex flex-wrap mt-4">
                   {project.techStack.map((tech, idx) => (
