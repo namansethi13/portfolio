@@ -41,15 +41,15 @@ function Hero() {
     <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-center items-center overflow-hidden">
       <Navbar />
       <div
-        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-16 lg:mt-28 mb-10 px-12"
+        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-4 lg:mt-28 mb-10 md:px-12"
 
       >
         <div className="text-light w-full flex lg:flex-row flex-col-reverse items-center justify-end gap-12">
           <div className="flex flex-col justify-center h-full p-4 md:w-3/5">
-            <h1 className="text-5xl font-bold text-left md:text-6xl mb-16">
+            <h1 className="text-5xl font-bold md:text-6xl mb-16 text-center md:text-left">
               Hello👋, I'm <span className="text-highlight">Naman Sethi</span>
             </h1>
-            <h2 className="text-2xl  md:text-4xl text-gray-300 text-justify">
+            <h2 className="text-2xl  md:text-4xl text-gray-300 md:text-left text-center ">
               a problem solver at heart who loves building things that
               ✨click✨(both literally and figuratively). Fueled by caffeine, I
               turn{" "}
