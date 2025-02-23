@@ -12,18 +12,24 @@ function Navbar(){
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const triggerPoint = 100;
-            const maxOpacity = 0.4;
+            const maxOpacity = 0.8;
+            const minOpacity = 0.2;
 
             let newOpacity = 0;
 
             if(scrollPosition > triggerPoint){
                 newOpacity = Math.min((scrollPosition - triggerPoint) / triggerPoint, maxOpacity)
+                newOpacity = Math.max(newOpacity, minOpacity)
+            }
+            else{
+                newOpacity = 0.2
             }
 
             navElement.current?.style.setProperty("background-color", `rgba(0,0,0,${newOpacity})`)
         }
     handleScroll()
     window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
     
     } , [])
 
@@ -36,7 +42,7 @@ function Navbar(){
 
   
     return(
-        <nav className="flex justify-between lg:bg-slate-100 bg-dark text-light p-4 fixed  w-full lg:top-0 z-50 h-20 bottom-0 max-w-[2650px] " ref={navElement}>
+        <nav className="flex justify-between lg:bg-slate-100 bg-dark text-light p-4 fixed  w-full lg:top-0 z-50 h-20 bottom-0 max-w-[2650px]" ref={navElement}>
             <img src="/profilex.png" alt="" className="lg:ml-32 hidden lg:block" />
 
 
@@ -44,7 +50,7 @@ function Navbar(){
                 {navLinks.map(({name , href}, index) => (
                     <a href={href} onClick={() => setSelected(index)}
                     className=
-                    { `rounded-full p-4 relative ${
+                    { `rounded-full p-4 relative text-2xl md:text-xl ${
                         selected === index 
                         ? "text-black bg-white border-4 top-8 "
                         : ""
