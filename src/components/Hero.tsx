@@ -41,7 +41,7 @@ function Hero() {
     <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-center items-center overflow-hidden">
       <Navbar />
       <div
-        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-16 lg:mt-28 mb-10"
+        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-16 lg:mt-28 mb-10 px-12"
 
       >
         <div className="text-light w-full flex lg:flex-row flex-col-reverse items-center justify-end gap-12">
