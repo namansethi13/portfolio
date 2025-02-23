@@ -20,7 +20,7 @@ const projects = [
   
   export default function ProjectsSection() {
     return (
-        <div className="w-full h-full  bg-gradient-to-r from-[#212121] via-[#212121] to-[#333333]  " id="projects">
+        <div className="w-full h-full  " id="projects">
       <div className="mt-16 w-full max-w-4xl mx-auto px-6 ">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

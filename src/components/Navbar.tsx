@@ -1,15 +1,43 @@
 import {FontAwesomeIcon} from  '@fortawesome/react-fontawesome'
 import { faHouse, faBriefcase, faKeyboard, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useState , useEffect, useRef } from 'react'
     
 function Navbar(){
     let navLinks = [{name: "About me", href: "#hero" , icon: faHouse}, {name: "Experience", href: "#experience", icon: faBriefcase}, {name: "Projects", href: "#projects", icon: faKeyboard }, {name: "Education", href: "#education", icon: faGraduationCap}]
     let [selected , setSelected] = useState(0)
 
+    const navElement = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const triggerPoint = 100;
+            const maxOpacity = 0.4;
+
+            let newOpacity = 0;
+
+            if(scrollPosition > triggerPoint){
+                newOpacity = Math.min((scrollPosition - triggerPoint) / triggerPoint, maxOpacity)
+            }
+
+            navElement.current?.style.setProperty("background-color", `rgba(0,0,0,${newOpacity})`)
+        }
+    handleScroll()
+    window.addEventListener("scroll", handleScroll)
+    
+    } , [])
+
+        
+
+
+
+
+
+
   
     return(
-        <nav className="flex justify-between lg:bg-slate-100/20 bg-dark text-light p-4 fixed  w-full lg:top-0 z-50 h-20 bottom-0">
-            <img src="/xprofile.jpg" alt="" className="lg:ml-32 hidden lg:block" />
+        <nav className="flex justify-between lg:bg-slate-100 bg-dark text-light p-4 fixed  w-full lg:top-0 z-50 h-20 bottom-0 max-w-[2650px] " ref={navElement}>
+            <img src="/profilex.png" alt="" className="lg:ml-32 hidden lg:block" />
 
 
             <ul className="justify-between w-5/7 gap-4 items-center text-lg hidden lg:flex">
@@ -20,7 +48,7 @@ function Navbar(){
                         selected === index 
                         ? "text-black bg-white border-4 top-8 "
                         : ""
-                    }`} key={name}>
+                    }`} key={index}>
                     <li className="inline-block mx-4" key={name}>{name}</li>
                     </a>
                 ))}
@@ -29,14 +57,14 @@ function Navbar(){
             <div className="lg:hidden flex items-center w-full">
                 <ul className="flex items-center gap-4 justify-between w-full">
                     {navLinks.map(({name , href, icon} , index) => (
-                        <div className='flex flex-col items-center gap-1'>
+                        <div className='flex flex-col items-center gap-1' key={`mobile-${index}`}>
 
                         <a href={href} onClick={() => setSelected(index)} className=
                         { `rounded-full p-4 relative transition-all duration-100 ${
                             selected === index 
                             ? "text-black bg-white border-4 bottom-8 mix-blend-difference"
                             : ""
-                        }`} key={name}>
+                        }`} key={`mobile-${index}`}>
                         <FontAwesomeIcon icon={icon} className="text-2xl" />
                         </a>
                         {selected === index ? <p className="absolute bottom-0 text-center w-full">{name}</p> : null}

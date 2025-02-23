@@ -33,7 +33,7 @@ export default function TechMarquee() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden from-[#212121] via-[#212121] to-[#333333] bg-gradient-to-r py-6" id="experience">
+    <div className="relative w-full overflow-hidden py-6" id="experience">
       
       {/* Experience Section */}
       <div className="mt-16 w-full max-w-4xl mx-auto px-6">

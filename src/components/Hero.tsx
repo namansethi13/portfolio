@@ -7,58 +7,8 @@ import {
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CTA from "./CTA";
-import { useRef, useEffect } from "react";
 
 function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const setCanvasSize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-
-    interface DrawLightEvent extends MouseEvent {
-      clientX: number;
-      clientY: number;
-    }
-
-    const drawLight = (e: DrawLightEvent) => {
-      const mouseX = e.clientX + window.scrollX;
-      const mouseY = e.clientY + window.scrollY;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const light = ctx.createRadialGradient(
-      mouseX,
-      mouseY,
-      0,
-      mouseX,
-      mouseY,
-      100
-      );
-      light.addColorStop(0, "rgba(255,255,255,0.2)");
-      light.addColorStop(1, "rgba(255,255,255,0)");
-      ctx.fillStyle = light;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    };
-
-    setCanvasSize();
-
-    window.addEventListener("resize", setCanvasSize);
-    window.addEventListener("mousemove", drawLight);
-
-    return () => {
-      window.removeEventListener("resize", setCanvasSize);
-      window.removeEventListener("mousemove", drawLight);
-    };
-  }, []);
-
   const text = "Contact Me!";
   const onClick = () => {
     window.open("mailto:namansethi1328@gmail.com");
@@ -88,14 +38,10 @@ function Hero() {
   ];
 
   return (
-    <div id="hero" className="relative bg-gradient-to-r from-[#212121] via-[#212121] to-[#333333] w-full h-full flex flex-col min-w-screen min-h-[80vh] justify-start items-center overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 z-0 pointer-events-none w-full h-full"
-      ></canvas>
+    <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-start items-center overflow-hidden">
       <Navbar />
       <div
-        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1600px] px-8 mt-16 pb-[10rem] lg:mt-20 "
+        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1600px] px-8 mt-16 pb-[10rem] lg:mt-28 "
         
       >
         <div className="text-light w-full flex md:flex-row flex-col-reverse items-center justify-end">
@@ -132,7 +78,7 @@ function Hero() {
           </div>
           <div className="mt-8 w-2/5 h-full md:w-1/3 flex justify-center items-center">
             <img
-              src="/xprofile.jpg"
+              src="/profilex.png"
               alt="profile"
               className="h-full object-cover rounded-full"
             />

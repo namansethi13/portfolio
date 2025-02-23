@@ -15,7 +15,7 @@ const education = [
   
   export default function Education() {
     return (
-        <div className="bg-gradient-to-r from-[#212121] via-[#212121] to-[#333333] w-full h-full  overflow-hidden " id="education">
+        <div className="bg-gradient-to-r w-full h-full  overflow-hidden " id="education">
       <div className="mt-16 w-full max-w-4xl mx-auto px-6 ">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">Education</h2>
         <div className="space-y-6">
