@@ -38,18 +38,18 @@ function Hero() {
   ];
 
   return (
-    <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-start items-center overflow-hidden">
+    <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-center items-center overflow-hidden">
       <Navbar />
       <div
-        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1600px] px-8 mt-16 pb-[10rem] lg:mt-28 "
-        
+        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-16 lg:mt-28 mb-10"
+
       >
-        <div className="text-light w-full flex md:flex-row flex-col-reverse items-center justify-end">
-          <div className="flex flex-col justify-center h-full p-4 md:w-4/5">
-            <h1 className="text-5xl font-bold text-left md:text-6xl mb-20">
+        <div className="text-light w-full flex lg:flex-row flex-col-reverse items-center justify-end gap-12">
+          <div className="flex flex-col justify-center h-full p-4 md:w-3/5">
+            <h1 className="text-5xl font-bold text-left md:text-6xl mb-16">
               Hello👋, I'm <span className="text-highlight">Naman Sethi</span>
             </h1>
-            <h2 className="text-2xl text-left md:text-4xl text-gray-300">
+            <h2 className="text-2xl  md:text-4xl text-gray-300 text-justify">
               a problem solver at heart who loves building things that
               ✨click✨(both literally and figuratively). Fueled by caffeine, I
               turn{" "}
@@ -75,19 +75,19 @@ function Hero() {
                 </a>
               ))}
             </div>
+            <div className="w-full flex justify-center items-center mt-10 lg:justify-start lg:mr-16">
+              <CTA text={text} onClick={onClick} />
+            </div>
           </div>
           <div className="mt-8 w-2/5 h-full md:w-1/3 flex justify-center items-center">
             <img
               src="/profilex.png"
               alt="profile"
-              className="h-full object-cover rounded-full"
+              className="h-full object-cover rounded-full w-full"
             />
           </div>
         </div>
-        <div className="w-full flex justify-center items-center mt-10 lg:justify-end lg:mr-16">
-          {/* Aligned to the right on larger screens */}
-          <CTA text={text} onClick={onClick} />
-        </div>
+
       </div>
     </div>
   );

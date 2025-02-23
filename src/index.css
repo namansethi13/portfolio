@@ -21,7 +21,7 @@ body {
   }
   @media screen and (max-width: 768px) {
     .animate-marquee {
-      animation: marquee 7s linear infinite; /* Adjust duration as needed */
+      animation: marquee 16s linear infinite; /* Adjust duration as needed */
     }
     
   }
