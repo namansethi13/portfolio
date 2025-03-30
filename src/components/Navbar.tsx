@@ -52,7 +52,7 @@ function Navbar(){
                     className=
                     { `rounded-full p-4 relative text-2xl md:text-xl ${
                         selected === index 
-                        ? "text-black bg-white border-4 top-8 "
+                        ? "text-black bg-white border-4"
                         : ""
                     }`} key={index}>
                     <li className="inline-block mx-4" key={name}>{name}</li>

@@ -7,9 +7,13 @@ import {
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CTA from "./CTA";
+import { useEffect, useRef } from "react";
 
 function Hero() {
   const text = "Contact Me!";
+  let rotateDiv = useRef<HTMLDivElement>(null);
+  let rotateCount = 0;
+
   const onClick = () => {
     window.open("mailto:namansethi1328@gmail.com");
   };
@@ -37,6 +41,28 @@ function Hero() {
     },
   ];
 
+  const handleClick = () => {
+    console.log("clicked");
+    console.log(rotateDiv.current);
+    if (rotateDiv.current) {
+      rotateDiv.current.classList.toggle("rotate-y-180");
+    }
+  }
+
+  const rotateAfter5s = () => {
+    setTimeout(() => {
+      if (rotateDiv.current) {
+        rotateDiv.current.classList.toggle("rotate-y-180");
+        if(rotateCount < 1) {
+          rotateCount++;
+          rotateAfter5s();
+        }
+      }
+
+    }
+    , 5000);
+  }
+  rotateAfter5s();
   return (
     <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-center items-center overflow-hidden">
       <Navbar />
@@ -47,7 +73,7 @@ function Hero() {
         <div className="text-light w-full flex lg:flex-row flex-col-reverse items-center justify-end gap-12">
           <div className="flex flex-col justify-center h-full p-4 md:w-3/5">
             <h1 className="text-5xl font-bold md:text-6xl mb-16 text-center md:text-left">
-              Hello👋, I'm <span className="text-highlight">Naman Sethi</span>
+              Hello, I'm <span className="text-highlight">Naman Sethi</span>
             </h1>
             <h2 className="text-2xl  md:text-4xl text-gray-300 md:text-left text-center ">
               a problem solver at heart who loves building things that
@@ -79,12 +105,32 @@ function Hero() {
               <CTA text={text} onClick={onClick} />
             </div>
           </div>
-          <div className="mt-8 w-2/5 h-full md:w-1/3 flex justify-center items-center">
-            <img
-              src="/profilex.png"
-              alt="profile"
-              className="h-full object-cover rounded-full w-full"
-            />
+          <div className="mt-8 w-2/5 h-full md:w-1/3 flex justify-center items-center relative">
+          <div className="relative w-40 h-40 lg:w-[30rem] lg:h-[30rem] flex justify-center items-center perspective" onClick={handleClick}>
+          {/* Flipping Container */}
+          <div className="relative w-full h-full transition-transform duration-1000 transform-style-3d hover:rotate-y-180" ref={rotateDiv}>
+            
+            {/* Front Side (Initially Visible) */}
+            <div className="absolute w-full h-full backface-hidden ">
+              <img
+                src="/profilex.png"
+                alt="profile"
+                className="h-full object-cover rounded-full w-full"
+              />
+            </div>
+
+            {/* Back Side (Initially Hidden) */}
+            <div className="absolute w-full h-full backface-hidden rotate-y-180">
+              <img
+                src="/animated-profilex.png"
+                alt="profile"
+                className="h-full object-cover rounded-full w-full"
+              />
+            </div>
+
+          </div>
+        </div>
+
           </div>
         </div>
 

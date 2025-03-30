@@ -35,4 +35,10 @@ body {
   .marquee-animation-pause {
     animation-play-state: paused;
   }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
   
+  .perspective {
+    perspective: 1000px;
+  }
