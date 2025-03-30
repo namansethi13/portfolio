@@ -7,7 +7,7 @@ import {
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CTA from "./CTA";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function Hero() {
   const text = "Contact Me!";
