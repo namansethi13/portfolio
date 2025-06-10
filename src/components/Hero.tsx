@@ -36,7 +36,7 @@ function Hero() {
     },
     {
       name: "Resume",
-      href: "https://drive.google.com/file/d/1CcOgGPGOZcob0HWAx8xiAzPLN4p6VLdx/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1UMqzD_Y0inNJiSGlhFL1GvNwxfLmCMLr/view",
       icon: faFilePdf,
     },
   ];
