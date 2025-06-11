@@ -36,13 +36,12 @@ function Hero() {
     },
     {
       name: "Resume",
-      href: "https://drive.google.com/file/d/1UMqzD_Y0inNJiSGlhFL1GvNwxfLmCMLr/view",
+      href: "https://drive.google.com/file/d/1Wtb3V8mYKrJ4DsN7iwdaM19ngmLZxXN3/view",
       icon: faFilePdf,
     },
   ];
 
   const handleClick = () => {
-    console.log("clicked");
     console.log(rotateDiv.current);
     if (rotateDiv.current) {
       rotateDiv.current.classList.toggle("rotate-y-180");
