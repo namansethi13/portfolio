@@ -33,6 +33,7 @@ function App() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
     useEffect(() => {
+      
       const canvas = canvasRef.current;
       if (!canvas) return;
   
@@ -93,6 +94,7 @@ function App() {
       <Education/>
       <CTA text={text} onClick={onClick} />
       <Footer/>
+
       </div>
     </div>
   )
