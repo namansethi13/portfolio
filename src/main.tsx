@@ -9,7 +9,8 @@ import './index.css'
 import App from './App.tsx'
 import BlogLayout from './BlogLayout.tsx'
 import BlogList from './BlogList.tsx';
-
+import BlogPost from './BlogPost.tsx';
+import BlogError from './BlogError.tsx';
 async function load_posts(){
   let api_base_url = import.meta.env.VITE_API_BASE_URL;
   let res = await fetch(api_base_url+"/blog/");
@@ -21,6 +22,22 @@ async function load_posts(){
 
   return [error , response]
 }
+
+
+async function load_post({params}: any){
+  let api_base_url = import.meta.env.VITE_API_BASE_URL;
+  let res = await fetch(api_base_url+"/blog/"+params.id);
+  let error = res.status !== 200;
+  let response = null;
+  if(!error){
+    response = await res.json()
+  }
+
+  return [error , response]
+}
+
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,18 +46,27 @@ const router = createBrowserRouter([
   {
     path: '/blog',
     element: <BlogLayout/>,
+    errorElement: <BlogError />,
     children: [
       {
         index: true,
         element: <BlogList />,
         loader: load_posts,
       },
+
+      {
+        path: '/blog/:id',
+        element: <BlogPost />,
+        loader: load_post,
+      }
     ]
   }
 ]);
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!;
+const root = createRoot(rootElement);
+root.render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);

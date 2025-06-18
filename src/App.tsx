@@ -5,6 +5,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import CTA from './components/CTA'
 import { useRef, useEffect, useState } from "react";
 function App() {
@@ -87,6 +88,7 @@ function App() {
         className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
       ></canvas>
       <div className="w-full h-full max-w-[2560px] flex justify-center items-center flex-col">
+      <Navbar />
       <Hero/>
       <TechMarquee/>
       <Experience/>

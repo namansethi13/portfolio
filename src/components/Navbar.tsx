@@ -1,9 +1,14 @@
 import {FontAwesomeIcon} from  '@fortawesome/react-fontawesome'
-import { faHouse, faBriefcase, faKeyboard, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faBriefcase, faKeyboard, faGraduationCap, faPen } from '@fortawesome/free-solid-svg-icons'
 import { useState , useEffect, useRef } from 'react'
     
 function Navbar(){
-    let navLinks = [{name: "About me", href: "#hero" , icon: faHouse}, {name: "Experience", href: "#experience", icon: faBriefcase}, {name: "Projects", href: "#projects", icon: faKeyboard }, {name: "Education", href: "#education", icon: faGraduationCap}]
+    let navLinks = [{name: "About me", href: "/#hero" , icon: faHouse},
+        {name: "Experience", href: "/#experience", icon: faBriefcase},
+        {name: "Projects", href: "/#projects", icon: faKeyboard },
+        {name: "Education", href: "/#education", icon: faGraduationCap},
+        {name: "Blog", href: "/blog", icon: faPen}
+    ]
     let [selected , setSelected] = useState(0)
 
     const navElement = useRef<HTMLDivElement>(null)
@@ -63,7 +68,7 @@ function Navbar(){
             <div className="lg:hidden flex items-center w-full">
                 <ul className="flex items-center gap-4 justify-between w-full">
                     {navLinks.map(({name , href, icon} , index) => (
-                        <div className='flex flex-col items-center gap-1' key={`mobile-${index}`}>
+                        <div className='flex flex-col items-center sm:gap-1 xs:gap-0' key={`mobile-${index}`}>
 
                         <a href={href} onClick={() => setSelected(index)} className=
                         { `rounded-full p-4 relative transition-all duration-100 ${
@@ -71,7 +76,7 @@ function Navbar(){
                             ? "text-black bg-white border-4 bottom-8 mix-blend-difference"
                             : ""
                         }`} key={`mobile-${index}`}>
-                        <FontAwesomeIcon icon={icon} className="text-2xl" />
+                        <FontAwesomeIcon icon={icon} className="text-[0.8rem] sm:text-xl" />
                         </a>
                         {selected === index ? <p className="absolute bottom-0 text-center w-full">{name}</p> : null}
                         </div>

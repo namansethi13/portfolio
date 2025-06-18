@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import {useLoaderData } from "react-router-dom";
 import BlogCard from "./components/BlogCard"
 export default function BlogList() {
   const [error, posts] = useLoaderData();

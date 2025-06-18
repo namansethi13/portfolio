@@ -7,6 +7,8 @@
     --color-dark: #212121;
     --color-highlight: #EB5A3C;
     --color-accent: #7E60BF;
+    --breakpoint-xs: 20rem;
+    --breakpoint-sm: 24rem;
 
 }
 html{
