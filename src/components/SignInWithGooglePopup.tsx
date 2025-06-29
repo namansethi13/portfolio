@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { supabase } from "./../scripts/supabaseClient";
 type Props = {
   open: boolean;
