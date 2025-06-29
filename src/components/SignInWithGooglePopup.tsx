@@ -6,18 +6,7 @@ type Props = {
   rederictTo:string;
 };
 export default function SignInWithGooglePopup({ open, onClose, rederictTo }: Props) {
-    const [session, setSession] : any = useState(null);
-    useEffect(() => {
-      supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session)
-      })
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
-      })
-      return () => subscription.unsubscribe()
-    }, [])
+    // Removed unused session state and effect
 
    
     const handleSignIn = async () => {
