@@ -17,7 +17,7 @@ export default function BlogCard(
               target="_blank"
               rel="noopener noreferrer"
               className="relative bg-black p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 overflow-hidden 
-              w-[280px] h-[460px] sm:w-[300px] sm:h-[480px] md:w-[320px] md:h-[500px] lg:w-[340px] lg:h-[520px]"              
+              w-[280px] h-[530px] sm:w-[300px] sm:h-[550px] md:w-[320px] md:h-[600px] lg:w-[340px] lg:h-[620px]"              
               style={{ minWidth: '250px' }}
             >
               <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-lg overflow-hidden">

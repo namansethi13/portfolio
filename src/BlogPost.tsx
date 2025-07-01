@@ -2,19 +2,28 @@ import { useLoaderData } from "react-router-dom";
 import DOMPurify from 'dompurify';
 
 function getSectionType(section: any) {
-    if (section.section_type === "image") {
-        return (
-            <div className="flex justify-center items-center h-full">
-                <img src={section.image} alt={section.alt_text || section.title} className="max-w-[1600px] max-h-full object-cover" />
+   if (section.section_type === "image") {
+    return (
+        <div className="p-4 ">
+            <h2 className="text-2xl font-bold text-white mb-4 text-center md:text-left">
+                {section.section_title}
+            </h2>
+            <div className="flex justify-center items-center w-full">
+                <img
+                    src={section.image}
+                    alt={section.alt_text || section.title}
+                    className="w-full max-w-screen-lg h-auto object-contain rounded-lg shadow-lg"
+                />
             </div>
-        );
-    }
+        </div>
+    );
+}
 
     if (section.section_type === "raw_content") {
         return (
             <div className="p-4">
                 <h2 className="text-2xl font-bold text-white mb-4">{section.section_title}</h2>
-                <p className="text-gray-300 text-justify [&_a]:text-blue-400 [&_a]:underline"
+                <p className="text-gray-300 text-justify [&_a]:text-blue-400 [&_a]:underline text-base md:text-lg lg:text-xl"
                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(section.content) }} />
             </div>
         );
@@ -28,7 +37,7 @@ function getSectionType(section: any) {
     
     if (section.section_type === "footer") {
         return (
-            <footer className="text-gray-500 text-left mt-8 w-full max-w-[1600px] p-4">
+            <footer className="text-gray-400 text-left mt-8 w-full max-w-[1600px] p-4 bg-black">
                 <p>{section.content}</p>
             </footer>
         );
