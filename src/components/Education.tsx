@@ -7,7 +7,7 @@ const education = [
     },
     {
       institution: "Maharaja Surajmal Institute",
-      degree: "Bachelor of Computer Applications (Hons.), Minor in Data Science",
+      degree: "Bachelor of Computer Applications (Hons.), Minor Specialization in Data Science",
       duration: "Dec. 2021 - Jul. 2024",
     cgpa: "9.56/10",
     },

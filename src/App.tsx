@@ -1,8 +1,8 @@
 import './App.css'
 import Hero from './components/Hero'
-import TechMarquee from './components/TechMarquee'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import TechList from './components/TechList'
 import Education from './components/Education'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
@@ -90,7 +90,7 @@ function App() {
       <div className="w-full h-full max-w-[2560px] flex justify-center items-center flex-col">
       <Navbar />
       <Hero/>
-      <TechMarquee/>
+      <TechList/>
       <Experience/>
       <Projects/>
       <Education/>
