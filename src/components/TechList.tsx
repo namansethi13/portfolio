@@ -79,9 +79,6 @@ export default function TechList() {
         ))}
       </div>
     </div>
-      <div
-        className="relative w-full overflow-hidden bg-highlight py-6 overflow-x-hidden "
-      ></div>
     </div>
 
   );

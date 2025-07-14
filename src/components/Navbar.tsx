@@ -47,11 +47,11 @@ function Navbar(){
 
   
     return(
-        <nav className="flex justify-between lg:bg-slate-100 bg-dark text-light p-4 fixed  w-full lg:top-0 z-50 h-20 bottom-0 max-w-[2650px]" ref={navElement}>
-            <img src="/profilex.png" alt="" className="lg:ml-32 hidden lg:block" />
+       <nav className="flex justify-between lg:bg-slate-100 bg-dark text-light p-4 fixed w-full max-w-screen-xl mx-auto lg:top-0 z-50 h-20 bottom-0 rounded-b-2xl" ref={navElement}>
+            <img src="/profilex.png" alt="" className="lg:ml-32 hidden xl:block" />
 
 
-            <ul className="justify-between w-5/7 gap-4 items-center text-lg hidden lg:flex">
+            <ul className="justify-between gap-4 items-center text-lg hidden lg:flex">
                 {navLinks.map(({name , href}, index) => (
                     <a href={href} onClick={() => setSelected(index)}
                     className=
@@ -88,9 +88,6 @@ function Navbar(){
                 
             </div>
 
-            <div className="absolute h-40 "> 
-                
-            </div>
 
         </nav>
 

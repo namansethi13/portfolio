@@ -62,17 +62,17 @@ function Hero() {
   }
   rotateAfter5s();
   return (
-    <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col min-w-screen min-h-[30vh] justify-center items-center overflow-hidden">
+    <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col  max-w-screen-xl min-h-[30vh] justify-center items-center overflow-hidden">
       <div
-        className="flex flex-col items-center justify-center w-full md:mt-20 max-w-[1920px] mt-4 lg:mt-28 mb-10 md:px-12"
+        className="flex flex-col items-center justify-center w-full md:mt-20 mt-4 lg:mt-28 mb-10 md:px-12"
 
       >
         <div className="text-light w-full flex lg:flex-row flex-col-reverse items-center justify-end gap-12">
           <div className="flex flex-col justify-center h-full p-4 md:w-3/5">
-            <h1 className="text-5xl font-bold md:text-6xl mb-16 text-center md:text-left">
+            <h1 className="text-4xl font-bold md:text-6xl mb-4 text-center md:text-left">
               Hello, I'm <span className="text-highlight">Naman Sethi</span>
             </h1>
-            <h2 className="text-2xl  md:text-4xl text-gray-300 md:text-left text-center ">
+            <h2 className="text-md  md:text-lg text-gray-300 md:text-left text-center ">
               a problem solver at heart who loves building things that
               ✨click✨(both literally and figuratively). Fueled by caffeine, I
               turn{" "}
@@ -102,7 +102,7 @@ function Hero() {
               <CTA text={text} onClick={onClick} />
             </div>
           </div>
-          <div className="mt-8 w-2/5 h-full md:w-1/3 flex justify-center items-center relative">
+          <div className="mt-8 w-2/5 h-full md:w-2/3 flex justify-center items-start relative">
           <div className="relative w-40 h-40 lg:w-[30rem] lg:h-[30rem] flex justify-center items-center perspective" onClick={handleClick}>
           {/* Flipping Container */}
           <div className="relative w-full h-full transition-transform duration-1000 transform-style-3d hover:rotate-y-180" ref={rotateDiv}>

@@ -81,13 +81,14 @@ function App() {
         window.removeEventListener("mousemove", drawLight);
       };
     }, []);
+
   return (
-    <div className='flex relative flex-col items-center justify-center overflow-x-hidden bg-linear-to-r from-zinc-900 via-stone-800 to-zinc-900 pb-20 lg:pb-0'>
+    <div className='flex relative flex-col items-center justify-center overflow-x-hidden bg-linear-to-r from-[#0A0A0A] via-[#252525] to-[#0A0A0A]  pb-20 lg:pb-0'>
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
       ></canvas>
-      <div className="w-full h-full max-w-[2560px] flex justify-center items-center flex-col">
+      <div className="w-full h-full max-w-[1280px] flex justify-center items-center flex-col">
       <Navbar />
       <Hero/>
       <TechList/>
