@@ -6,12 +6,12 @@ import {
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CTA from "./CTA";
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Hero() {
   const text = "Contact Me!";
-  let rotateDiv = useRef<HTMLDivElement>(null);
-  let rotateCount = 0;
+  const rotateCount = useRef(0);
+  const [flipped, setFlipped] = useState(false);
 
   const onClick = () => {
     window.open("mailto:namansethi1328@gmail.com");
@@ -35,32 +35,21 @@ function Hero() {
     },
     {
       name: "Resume",
-      href: "https://drive.google.com/file/d/1wAOFQ-o-ozqHIdS_hT99dBVoj17zXlu0/view",
+      href: "https://drive.google.com/file/d/1qdPuiJozCIK35veohAqoeEUNBBSkDuhY/view",
       icon: faFilePdf,
     },
   ];
-
-  const handleClick = () => {
-    console.log(rotateDiv.current);
-    if (rotateDiv.current) {
-      rotateDiv.current.classList.toggle("rotate-y-180");
-    }
-  }
-
-  const rotateAfter5s = () => {
-    setTimeout(() => {
-      if (rotateDiv.current) {
-        rotateDiv.current.classList.toggle("rotate-y-180");
-        if(rotateCount < 1) {
-          rotateCount++;
-          rotateAfter5s();
-        }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (rotateCount.current < 1) { // only flip once
+        setFlipped((prev) => !prev);
+        rotateCount.current++;
       }
+    }, 5000);
 
-    }
-    , 5000);
-  }
-  rotateAfter5s();
+    return () => clearTimeout(timer); // prevent stacking
+  }, [flipped]);
+
   return (
     <div id="hero" className="relative bg-gradient-to-r w-full h-full flex flex-col  max-w-screen-xl min-h-[30vh] justify-center items-center overflow-hidden">
       <div
@@ -103,9 +92,15 @@ function Hero() {
             </div>
           </div>
           <div className="mt-8 w-2/5 h-full md:w-2/3 flex justify-center items-start relative">
-          <div className="relative w-40 h-40 lg:w-[30rem] lg:h-[30rem] flex justify-center items-center perspective" onClick={handleClick}>
-          {/* Flipping Container */}
-          <div className="relative w-full h-full transition-transform duration-1000 transform-style-3d hover:rotate-y-180" ref={rotateDiv}>
+          <div
+            className="relative w-40 h-40 lg:w-[30rem] lg:h-[30rem] flex justify-center items-center perspective cursor-pointer"
+            onClick={() => setFlipped((prev) => !prev)}
+          >
+            <div
+              className={`relative w-full h-full transition-transform duration-1000 transform-style-3d ${
+                flipped ? "rotate-y-180" : ""
+              }`}
+            >
             
             {/* Front Side (Initially Visible) */}
             <div className="absolute w-full h-full backface-hidden ">

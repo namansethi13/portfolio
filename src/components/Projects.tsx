@@ -11,11 +11,20 @@ const projects = [
     {
       name: "Save-My-Text",
       description: "An encrypted online secure notepad that allows users to store text at a unique URL and access it from anywhere.",
-      techStack: ["HTML", "CSS", "JavaScript", "jQuery", "Django"],
+      techStack: ["HTML", "CSS", "JavaScript", "Django"],
       link: "https://save-my-text.vercel.app/",
       image: "/save-my-text-ui.PNG",
       github: "https://github.com/namansethi13/SaveMyText"
     },
+    {
+      name: "ZenCity",
+      description: "Agentic AI system with Google ADK and Vertex AI within a 30-hour hackathon. The system synthesizes real-time city data to generate a continuous stream of tweets with near 100% uptime also developed predictive agents using Gemini to create summaries and mood scores from geo-tagged data, visualized on Google Maps",
+      techStack: ["Google ADK", "Vertex AI", "Gemini", "React", "Firebase", "GCP"],
+      link: "https://zen-frontend-five.vercel.app/",
+      image: "/zencity-ui.jpeg",
+      github: "https://github.com/namansethi13/zentrixel_ps1"
+    },
+
   ];
   
   export default function ProjectsSection() {
