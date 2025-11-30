@@ -1,28 +1,37 @@
 import {faGithub} from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 const projects = [
     {
+    name: "CrowdGuard - AI powered surveillance",
+    description: "An intelligent, automated, scalable surveillance system that can analyze live video feeds, detect potential hazards or unusual behavior in real-time, and alert relevant authorities instantly minimizing human dependency and response time.",
+    techStack: ["React", "Django", "LangGraph", "Kafka", "Docker", "MongoDB", "Node.js"],
+    link: "https://devfolio.co/projects/crowdgaurd-cf17",
+    image: "/crowdguard-ui.png",
+    github: "https://github.com/namansethi13/hackcbs_2025"
+  },
+  {
+    name: "ZenCity",
+    description: "Agentic AI system with Google ADK and Vertex AI within a 30-hour hackathon. The system synthesizes real-time city data to generate a continuous stream of tweets with near 100% uptime also developed predictive agents using Gemini to create summaries and mood scores from geo-tagged data, visualized on Google Maps",
+    techStack: ["Google ADK", "Vertex AI", "Gemini", "React", "Firebase", "GCP"],
+    link: "https://zen-frontend-five.vercel.app/",
+    image: "/zencity-ui.jpeg",
+    github: "https://github.com/namansethi13/zentrixel_ps1"
+  },
+  {
+    name: "Save-My-Text",
+    description: "An encrypted online secure notepad that allows users to store text at a unique URL and access it from anywhere.",
+    techStack: ["HTML", "CSS", "JavaScript", "Django"],
+    link: "https://save-my-text.vercel.app/",
+    image: "/save-my-text-ui.PNG",
+    github: "https://github.com/namansethi13/SaveMyText"
+  },
+  {
       name: "ShareAid",
       description: "A sustainable hub for donating and receiving old items, making a difference for both people and the planet.",
       techStack: ["Django REST Framework", "SQLite"],
       link: "https://project-shareaid.vercel.app/",
       image: "/shareaid-ui.PNG"
-    },
-    {
-      name: "Save-My-Text",
-      description: "An encrypted online secure notepad that allows users to store text at a unique URL and access it from anywhere.",
-      techStack: ["HTML", "CSS", "JavaScript", "Django"],
-      link: "https://save-my-text.vercel.app/",
-      image: "/save-my-text-ui.PNG",
-      github: "https://github.com/namansethi13/SaveMyText"
-    },
-    {
-      name: "ZenCity",
-      description: "Agentic AI system with Google ADK and Vertex AI within a 30-hour hackathon. The system synthesizes real-time city data to generate a continuous stream of tweets with near 100% uptime also developed predictive agents using Gemini to create summaries and mood scores from geo-tagged data, visualized on Google Maps",
-      techStack: ["Google ADK", "Vertex AI", "Gemini", "React", "Firebase", "GCP"],
-      link: "https://zen-frontend-five.vercel.app/",
-      image: "/zencity-ui.jpeg",
-      github: "https://github.com/namansethi13/zentrixel_ps1"
     },
 
   ];
@@ -39,7 +48,7 @@ const projects = [
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative bg-black p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 overflow-hidden"
+              className="relative bg-black p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 overflow-hidden group"
             >
               <div className="relative w-full h-40 md:h-48 rounded-lg overflow-hidden">
                 <img
@@ -47,6 +56,9 @@ const projects = [
                   alt={project.name}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"  
                 />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-4xl text-white" />
+                </div>
               </div>
               <div className="p-4">
                 <h3 className="text-xl md:text-2xl font-semibold text-white">{project.name} {project?.github && ( 
@@ -76,4 +88,3 @@ const projects = [
       </div>
     );
   }
-  

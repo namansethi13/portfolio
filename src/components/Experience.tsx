@@ -1,7 +1,15 @@
 const experiences = [
   { 
+    year: "November 2025 - Present", 
+    role: "SDE Intern", 
+    company: "Adbrew", 
+    description: [
+      "Contributing to the development and enhancement of Adbrew's core advertising platform, focusing on implementing new features and optimizing existing functionalities to improve user experience and performance.",
+    ]
+  },
+  { 
     year: "August 2024 - August 2025", 
-    role: "Full Stack Developer", 
+    role: "Full Stack Developer (Part-Time)", 
     company: "Tranasha.in", 
     description: [
       "As the sole developer architected and developed a full-stack web application, from initial design to production deployment on GCP using Docker, serving 200+ monthly users .",
