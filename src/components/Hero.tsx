@@ -35,9 +35,9 @@ function Hero() {
     },
     {
       name: "Resume",
-      href: "https://drive.google.com/file/d/1qdPuiJozCIK35veohAqoeEUNBBSkDuhY/view",
+      href: "https://drive.google.com/drive/u/0/folders/12MxGwLVUlsNhQTXKpl_825wLy6UQPqW7",
       icon: faFilePdf,
-    },
+    },  
   ];
   useEffect(() => {
     const timer = setTimeout(() => {
