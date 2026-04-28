@@ -11,29 +11,16 @@ import BlogLayout from './BlogLayout.tsx'
 import BlogList from './BlogList.tsx';
 import BlogPost from './BlogPost.tsx';
 import BlogError from './BlogError.tsx';
+import { fetchBlogPosts, fetchBlogPost } from './services/service';
 async function load_posts(){
-  let api_base_url = import.meta.env.VITE_API_BASE_URL;
-  let res = await fetch(api_base_url+"/blog/");
-  let error = res.status !== 200;
-  let response = null;
-  if(!error){
-    response = await res.json()
-  }
-
-  return [error , response]
+  const { error, data } = await fetchBlogPosts();
+  return [error, data];
 }
 
 
 async function load_post({params}: any){
-  let api_base_url = import.meta.env.VITE_API_BASE_URL;
-  let res = await fetch(api_base_url+"/blog/"+params.id);
-  let error = res.status !== 200;
-  let response = null;
-  if(!error){
-    response = await res.json()
-  }
-
-  return [error , response]
+  const { error, data } = await fetchBlogPost(params.id);
+  return [error, data];
 }
 
 
