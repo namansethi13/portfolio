@@ -1,3 +1,5 @@
+import { getMediaUrl } from "../services/service";
+
 interface BlogCardData{
     title: string;
     description: string;
@@ -22,7 +24,7 @@ export default function BlogCard(
             >
               <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-lg overflow-hidden">
             <img
-              src={thumbnail}
+              src={getMediaUrl(thumbnail)}
               alt={title}
               className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"  
               width="100%"

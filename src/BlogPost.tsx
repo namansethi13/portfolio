@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import DOMPurify from 'dompurify';
+import { getMediaUrl } from "./services/service";
 
 function getSectionType(section: any) {
    if (section.section_type === "image") {
@@ -10,7 +11,7 @@ function getSectionType(section: any) {
             </h2>
             <div className="flex justify-center items-center w-full">
                 <img
-                    src={section.image}
+                    src={getMediaUrl(section.image)}
                     alt={section.alt_text || section.title}
                     className="w-full max-w-screen-lg h-auto object-contain rounded-lg shadow-lg"
                 />
