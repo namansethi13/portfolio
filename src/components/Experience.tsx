@@ -1,8 +1,16 @@
 const experiences = [
-  { 
-    year: "November 2025 - Present", 
-    role: "SDE Intern", 
-    company: "Adbrew", 
+  {
+    year: "May 2026 - Present",
+    role: "SDE 1",
+    company: "Adbrew",
+    description: [
+      "Taking on greater ownership of Adbrew's core advertising platform by driving and owning new features and their development and performance improvements.",
+    ]
+  },
+  {
+    year: "November 2025 - April 2026",
+    role: "SDE Intern",
+    company: "Adbrew",
     description: [
       "Contributing to the development and enhancement of Adbrew's core advertising platform, focusing on implementing new features and optimizing existing functionalities to improve user experience and performance.",
     ]
@@ -17,8 +25,8 @@ const experiences = [
     ]
   },
   { 
-    year: "July 2023 - Sep 2023", 
-    role: "Intern Engineer", 
+    year: "July 2023 - September 2023", 
+    role: "Intern, Engineering", 
     company: "Publicis Sapient", 
     description: [
       "Developed a platform to deploy, analyze, and manage RASA AI chatbots, reducing deployment time by 50% by automating manual processes.",
